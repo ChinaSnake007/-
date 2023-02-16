@@ -19,3 +19,4 @@ print(data2.group('jibie'))
 print(data2.group(2))
 
 
+算法
