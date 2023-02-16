@@ -1,0 +1,253 @@
+
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="zh-cn" xml:lang="zh-cn">
+<head>
+      <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+   
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+<meta name="copyright" content="(C) 版权 2005">
+<meta name="DC.rights.owner" content="(C) 版权 2005">
+<meta name="DC.Type" content="alarmref">
+<meta name="DC.Title" content="R_LOF">
+<meta name="DC.Relation" scheme="URI" content="../../../osn/alm/topic/alm_common_process.html">
+<meta name="DC.Format" content="XHTML">
+<meta name="DC.Identifier" content="alm_r_lof">
+<meta name="DC.Language" content="zh-cn">
+<link rel="stylesheet" type="text/css" href="../../../public_sys-resources/commonltr.css">
+<title>R_LOF</title>
+</head>
+<body style="clear:both; padding-left:10px; padding-top:5px; padding-right:5px; padding-bottom:5px"><a name="alm_r_lof"></a><a name="alm_r_lof"></a>
+
+
+<h1 class="topictitle1">R_LOF</h1>
+
+<div>
+<div class="alarmdesc"><a name="alm_r_lof__1.2.1"></a><a name="1.2.1"></a><h2 class="sectiontitle">告警解释</h2>
+<div class="alarmdescbody"><p>R_LOF告警表示线路接收侧帧丢失，当本站光口接收侧连续5帧没有接收到正确的A1，A2字节时就会上报该告警。</p>
+</div></div>
+
+<div class="alarmattrs"><a name="alm_r_lof__1.2.2"></a><a name="1.2.2"></a><h2 class="sectiontitle">告警属性</h2>
+<div class="alarmattrsbody"><table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="mcps1.2.2.1.1">告警级别</th>
+
+<th valign="bottom" align="left" id="mcps1.2.2.1.2">告警类型</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="mcps1.2.2.1.1"><p>紧急</p>
+</td>
+
+<td valign="top" headers="mcps1.2.2.1.2"><p>通信</p>
+</td>
+
+</tr>
+
+</table>
+</div></div>
+
+<div class="alarmparameters"><a name="alm_r_lof__1.2.3"></a><a name="1.2.3"></a><h2 class="sectiontitle">告警参数</h2>
+<div class="alarmparametersbody"><p>在网管中浏览告警时，选中该告警，在“告警详细信息”中会显示该告警的相关参数。告警参数的格式为“告警参数（16 进制）： 参数1 参数2…参数n”。每个参数的含义说明参见下表。</p><table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="mcps1.2.3.1.1">参数名称</th>
+
+<th valign="bottom" align="left" id="mcps1.2.3.1.2">参数含义</th>
+
+</tr>
+
+<tr>
+<td valign="top" headers="mcps1.2.3.1.1"><p>参数1</p>
+</td>
+
+<td valign="top" headers="mcps1.2.3.1.2"><p>代表告警单板实际端口号。</p>
+<p>对于分组处理单板、分组接口单板，无告警参数。</p>
+</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="mcps1.2.3.1.1"><p>参数2</p>
+</td>
+
+<td valign="top" headers="mcps1.2.3.1.2"><p>固定为0x00，无意义。</p>
+</td>
+
+</tr>
+
+<tr>
+<td valign="top" headers="mcps1.2.3.1.1"><p>参数3</p>
+</td>
+
+<td valign="top" headers="mcps1.2.3.1.2"><p>固定为0x01，无意义。</p>
+</td>
+
+</tr>
+
+</table>
+</div></div>
+
+<div class="impactonsystem"><a name="alm_r_lof__1.2.4"></a><a name="1.2.4"></a><h2 class="sectiontitle">对系统的影响</h2>
+<div class="impactonsystembody"><ul><li>该告警产生后，业务中断，并向下游下插AIS信号。</li><li>产生该告警后，系统会自动向上游站点回告MS_RDI，上游站点会产生MS_RDI告警。</li></ul>
+</div></div>
+
+<div class="section"><h4 class="sectiontitle">常见故障现象</h4><div class="note"><img src="../../../public_sys-resources/icon-note.gif"><span class="notetitle"> 说明： </span><div class="notebody"><p>若可能原因无对应故障现象，或者故障现象不在本内容列举的故障现象内，请按“处理步骤”中推荐的操作顺序处理。</p>
+</div></div>
+<p>无。</p>
+</div>
+
+<div class="possiblecauses"><a name="alm_r_lof__1.2.6"></a><a name="1.2.6"></a><h2 class="sectiontitle">可能原因</h2>
+<div class="alarmpossbody"><p>告警R_LOF产生的可能原因如下：</p>
+<ul><li><span id="alm_r_lof__alm_r_lof_ph01"><a name="alm_r_lof__alm_r_lof_ph01"></a><a name="alm_r_lof_ph01"></a>原因1：两个速率不一致的单板对接。（光接口板）</span></li><li><span id="alm_r_lof__alm_r_lof_ph02"><a name="alm_r_lof__alm_r_lof_ph02"></a><a name="alm_r_lof_ph02"></a>原因2：传输光缆故障，以及光纤连接器松动或不清洁。（光接口板）</span></li><li><span id="alm_r_lof__alm_r_lof_ph04"><a name="alm_r_lof__alm_r_lof_ph04"></a><a name="alm_r_lof_ph04"></a>原因3：本端接收单板故障，信号帧结构丢失。</span></li><li><span id="alm_r_lof__alm_r_lof_ph05"><a name="alm_r_lof__alm_r_lof_ph05"></a><a name="alm_r_lof_ph05"></a>原因4：对端发送单板故障（包括交叉时钟板故障），信号帧结构丢失。</span></li></ul>
+</div></div>
+
+<div class="alarmhanding"><a name="alm_r_lof__1.2.7"></a><a name="1.2.7"></a><h2 class="sectiontitle">处理步骤</h2><div class="alarmhandlingbody"><ol><li><span>在网管上查询告警。根据告警参数确定上报告警的端口。具体操作参见<span><cite>《任务集》</cite><a href="../../st/topic/tt_osn_tb_0274.html">浏览网元当前告警</a></span>。</span></li><li id="alm_r_lof__alm_r_lof_stp01"><a name="alm_r_lof__alm_r_lof_stp01"></a><a name="alm_r_lof_stp01"></a><span><span>原因1：两个速率不一致的单板对接。（光接口板）</span></span>
+<ol type="a"><li><span>错误的光纤连接可能会使两个速率不一致的单板连在一起，导致R_LOF告警上报。检查光纤是否错连。若光纤连接错误，更正错误的光纤连接。具体操作参见<span><cite>《调测指南》</cite><a href="../../cmg/topic/tt_osn_cmg_0054.html">检查SDH网络光纤连接</a></span>。查询告警是否消除。</span></li><li><span>若告警未消除，检查相连两端单板是否为同一类型的单板，如带FEC功能的单板与不带FEC功能的单板对接。两端速率不一致导致对接失败上报R_LOF告警。根据实际情况在收发两端同时开启或者关闭FEC功能。具体操作参见<span><cite>《任务集》</cite><a href="../../st/topic/tt_osn_st_7044.html">配置FEC功能</a></span>。</span><p><div class="note"><img src="../../../public_sys-resources/icon-note.gif"><span class="notetitle"> 说明： </span><div class="notebody"><p>支持FEC功能的单板参见<cite>《硬件描述》</cite>各单板的“功能和特性”。</p>
+</div></div>
+</p></li><li><span>查询告警是否消除。若告警未消除，转<a href="#alm_r_lof__alm_r_lof_stp02">3</a>。</span></li></ol>
+
+</li><li id="alm_r_lof__alm_r_lof_stp02"><a name="alm_r_lof__alm_r_lof_stp02"></a><a name="alm_r_lof_stp02"></a><span><span>原因2：传输光缆故障，以及光纤连接器松动或不清洁。（光接口板）</span></span>
+<ol type="a"><li><span>查询与上报告警单板相连的对端单板的发送光功率是否在正常范围内。具体单板光功率指标参见<span><cite>《技术指标集》</cite><a href="../../ts/topic/cn_osn_ts_0015.html">单板指标</a></span>。具体操作参见<span><cite>《任务集》</cite><a href="../../st/topic/tt_osn_tb_7039.html">查询光功率</a></span>。</span><p><div class="note"><img src="../../../public_sys-resources/icon-note.gif"><span class="notetitle"> 说明： </span><div class="notebody"><p>参见<span><cite>《任务集》</cite><a href="../../st/topic/tt_osn_st_7042.html">查询单板制造信息报表</a></span>或者<span><cite>《硬件描述》</cite><a href="../../hd/topic/tc_osn_hd_0015.html">单板条形码说明</a></span>可获取单板光模块制造信息。</p>
+</div></div>
+</p>
+<table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="mcps1.2.7.3.2.1.3.1.1">如果……</th>
+
+<th valign="bottom" align="left" id="mcps1.2.7.3.2.1.3.1.2">则……</th>
+
+</tr>
+
+<tr>
+<td valign="top" id="mcps1.2.7.3.2.1.3.2.1" headers="mcps1.2.7.3.2.1.3.1.1"><strong><p>对端单板发送光功率异常，</p>
+</strong></td>
+
+<td valign="top" headers="mcps1.2.7.3.2.1.3.1.2 mcps1.2.7.3.2.1.3.2.1"><p>转<a href="#alm_r_lof__alm_r_lof_stp05">5</a>。</p>
+</td>
+
+</tr>
+
+<tr>
+<td valign="top" id="mcps1.2.7.3.2.1.3.3.1" headers="mcps1.2.7.3.2.1.3.1.1"><strong><p>对端单板发送光功率正常，</p>
+</strong></td>
+
+<td valign="top" headers="mcps1.2.7.3.2.1.3.1.2 mcps1.2.7.3.2.1.3.3.1"><p>继续下一步。</p>
+</td>
+
+</tr>
+
+</table>
+
+</li><li><span>通过网管查询本端的接收光功率是否在正常范围内。</span>
+<table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="mcps1.2.7.3.2.2.2.1.1">如果……</th>
+
+<th valign="bottom" align="left" id="mcps1.2.7.3.2.2.2.1.2">则……</th>
+
+</tr>
+
+<tr>
+<td valign="top" id="mcps1.2.7.3.2.2.2.2.1" headers="mcps1.2.7.3.2.2.2.1.1"><strong><p>本端单板接收光功率过低，</p>
+</strong></td>
+
+<td valign="top" headers="mcps1.2.7.3.2.2.2.1.2 mcps1.2.7.3.2.2.2.2.1"><p>继续下一步。</p>
+</td>
+
+</tr>
+
+<tr>
+<td valign="top" id="mcps1.2.7.3.2.2.2.3.1" headers="mcps1.2.7.3.2.2.2.1.1"><strong><p>本端单板接收光功率过高，</p>
+</strong></td>
+
+<td valign="top" headers="mcps1.2.7.3.2.2.2.1.2 mcps1.2.7.3.2.2.2.3.1"><p>转<a href="#alm_r_lof__alm_r_lof_stp04">4</a>。</p>
+</td>
+
+</tr>
+
+</table>
+
+</li><li><span>检查尾纤的弯曲半径是否在允许范围内。若尾纤弯曲半径小于6cm，重新盘放尾纤。查询告警是否消除。</span></li><li><span>若告警未消除，检查单板光接口与尾纤的连接是否松动。确认光纤连接器插紧后，查询告警是否消除。</span></li><li><span>若告警未消除，检查光纤连接器是否污损。具体检查方法参见<span><cite>《任务集》</cite><a href="../../st/topic/tt_osn_tb_0303.html">检查光纤连接器</a></span>。具体清洁方法参见<cite>《任务集》</cite>：</span><p><ul><li><a href="../../st/topic/tt_osn_tb_0304.html">用擦纤盒清洁光纤连接器</a></li><li><a href="../../st/topic/tt_osn_tb_0305.html">用镜头纸清洁光纤连接器</a></li><li><a href="../../st/topic/tt_osn_tb_0306.html">用无尘棉棒清洁光纤适配器</a></li></ul>
+</p></li><li><span>检查光缆是否有老化、破损、压迫的痕迹。若存在，请更换光缆。查询告警是否消除。若告警未消除，转<a href="#alm_r_lof__alm_r_lof_stp04">4</a>。</span></li></ol>
+
+</li><li id="alm_r_lof__alm_r_lof_stp04"><a name="alm_r_lof__alm_r_lof_stp04"></a><a name="alm_r_lof_stp04"></a><span><span>原因3：本端接收单板故障，信号帧结构丢失。</span></span>
+<ol type="a"><li><span>硬件内环回本端上报告警端口的收发接口。具体操作参见<span><cite>《任务集》</cite><a href="../../st/topic/tt_osn_st_7045.html">硬件环回</a></span>。</span><p><div class="caution"><span class="cautiontitle"><img src="../../../public_sys-resources/icon-caution.gif"> 注意： </span><div class="cautionbody"><p>环回操作会导致业务中断。硬件内环回不要出现光功率过载。根据单板的光功率指标，可在接收光口添加光衰。</p>
+</div></div>
+</p>
+<table cellpadding="4" cellspacing="0" summary="" border="1" class="simpletableborder">
+<tr>
+<th valign="bottom" align="left" id="mcps1.2.7.4.2.1.3.1.1">如果……</th>
+
+<th valign="bottom" align="left" id="mcps1.2.7.4.2.1.3.1.2">则……</th>
+
+</tr>
+
+<tr>
+<td valign="top" id="mcps1.2.7.4.2.1.3.2.1" headers="mcps1.2.7.4.2.1.3.1.1"><strong><p>告警R_LOF未消失，</p>
+</strong></td>
+
+<td valign="top" headers="mcps1.2.7.4.2.1.3.1.2 mcps1.2.7.4.2.1.3.2.1"><p>本端单板故障。继续下一步。</p>
+</td>
+
+</tr>
+
+<tr>
+<td valign="top" id="mcps1.2.7.4.2.1.3.3.1" headers="mcps1.2.7.4.2.1.3.1.1"><strong><p>告警R_LOF消失，</p>
+</strong></td>
+
+<td valign="top" headers="mcps1.2.7.4.2.1.3.1.2 mcps1.2.7.4.2.1.3.3.1"><p>转<a href="#alm_r_lof__alm_r_lof_stp05">5</a>。</p>
+</td>
+
+</tr>
+
+</table>
+
+</li><li><span>更换本端上报告警的单板。若单板支持可插拔光模块，更换可插拔光模块。具体操作参见<span><cite>《部件更换》</cite><a href="../../pr/topic/tt_osn_tb_7027.html">更换可插拔光/电模块</a></span>。否则，更换单板。具体操作参见<span><cite>《任务集》</cite><a href="../../st/topic/tt_osn_tb_0275.html">现场更换单板</a></span>。</span></li><li><span>查询告警是否消除。若告警未消除，转<a href="#alm_r_lof__alm_r_lof_stp05">5</a>。</span></li></ol>
+
+</li><li id="alm_r_lof__alm_r_lof_stp05"><a name="alm_r_lof__alm_r_lof_stp05"></a><a name="alm_r_lof_stp05"></a><span><span>原因4：对端发送单板故障（包括交叉时钟板故障），信号帧结构丢失。</span></span>
+<ol type="a"><li><span>更换与上报告警单板相连的对端单板。若单板支持可插拔光模块，更换可插拔光模块。具体操作参见<span><cite>《部件更换》</cite><a href="../../pr/topic/tt_osn_tb_7027.html">更换可插拔光/电模块</a></span>。否则，更换单板。具体操作参见<span><cite>《任务集》</cite><a href="../../st/topic/tt_osn_tb_0275.html">现场更换单板</a></span>。查询告警是否消除。</span></li><li><span>若告警未消除，更换对端交叉时钟板。具体操作参见<cite>《部件更换》</cite>。</span><p><ul><li><a href="../../pr/topic/tt_osn_tb_0282.html">更换交叉时钟单板</a></li><li><a href="../../pr/topic/tt_osn_tb_0283.html">更换PCXL单板</a></li></ul>
+</p></li><li><span>查询告警是否消除。若告警仍未消除，联系华为工程师处理。</span></li></ol>
+
+</li></ol>
+</div></div>
+
+<div class="relatedinformation"><a name="alm_r_lof__1.2.8"></a><a name="1.2.8"></a><h2 class="sectiontitle">参考信息</h2>
+<div class="relatedinformationbody"><p>无。</p>
+</div></div>
+
+</div>
+
+<div>
+<div class="familylinks">
+<div class="parentlink"><strong>父主题：</strong> <a href="../../../osn/alm/topic/alm_common_process.html" title="本章介绍设备常用告警的处理方法。">常用告警处理</a></div>
+</div>
+</div>
+
+<div class="hrcopyright"><hr size="2"></div><div class="hwcopyright">华为专有和保密信息</div><div class="hwcopyright">版权所有 &copy; 华为技术有限公司</div></body>
+</html><link rel="stylesheet" type="text/css" href="http://localhost:7890/css/topic.css?time=lite_v2r1c00spc200_20120430" />
+<script type="text/javascript" src="http://localhost:7890/js/jquery-1.4.2.js?time=lite_v2r1c00spc200_20120430"></script>
+<script type="text/javascript">jQuery(document).ready(function(){
+jQuery("a[href*='http://']").attr("target","_blank");
+});</script>
+<input type="hidden" id="hidden_pos" value="">
+<input type="hidden" id="hidden_noteId" value="">
+<script type="text/javascript" src="http://localhost:7890/js/notes/note_position.js?time=lite_v2r1c00spc200_20120430"></script>
+<script type="text/javascript">if(window.parent.frames["cFrame_110"]){
+window.parent.frames["cFrame_110"].document.getElementById('hidden_noteId').value="";
+if(window.navigator.userAgent.indexOf("MSIE")>=1){
+window.parent.frames["cFrame_110"].document.body.onclick=function()
+{
+window.parent.frames["cFrame_110"].document.getElementById('hidden_pos').value=getNotePosition();
+}
+}
+}
+</script>
+<script language="JavaScript" type="text/javascript">
+if((parent.controlNavi != null) && (parent.controlNavi != undefined)){
+parent.controlNavi("true","alm_r_lof","resources/osn/alm/topic/alm_r_lof.html","31185780","02");}if((parent.oTopic != null) && (parent.oTopic != undefined)){parent.oTopic.isHtml=true;}parent.g_containKeyWords = false;
+</script>
+<script type="text/javascript">if (parent.parent.document.getElementById("hdx_topIframe")) parent.parent.document.getElementById("hdx_topIframe").src = ""; 
+if (parent.parent.document.getElementById("hdx_listIframe")) parent.parent.document.getElementById("hdx_listIframe").src = ""; 
+</script>
