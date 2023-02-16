@@ -17,6 +17,6 @@ obj2 = re.compile(r'<td valign="top" headers="mcps1.2.2.1.1"><p>(?P<jibie>.*?)</
 data2 = obj2.search(page_content1)
 print(data2.group('jibie'))
 print(data2.group(2))
-
+f
 
 
